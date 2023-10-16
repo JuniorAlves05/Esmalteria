@@ -25,5 +25,6 @@ public class Main {
          
          Agendamento agendamento = new Agendamento(1, cliente, barba, 30, "18/10/2023 08:25" );
          System.out.println(agendamento);
+         System.out.println(agendamento.getCliente().getNome());
      }
 }

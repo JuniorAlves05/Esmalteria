@@ -4,17 +4,25 @@
  */
 package view;
 
+import Controller.LoginController;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Dell
  */
 public class Login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new LoginController(this); //Controlador da classe Login
     }
 
     /**
@@ -39,6 +47,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonEntrar.setText("Entrar");
+        jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEntrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 420, -1, -1));
 
         TextSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +100,12 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextSenhaActionPerformed
 
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
+    // Executa quando clico no botao
+        this.controller.fizTarefa(); // Metodo de mensagem personalizada
+       
+    }//GEN-LAST:event_jButtonEntrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -132,4 +151,26 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTelaLogin;
     private javax.swing.JLabel jLabelUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public void exibeMensagem(String mensagem) { // Exibe a mensagem da tela .
+        JOptionPane.showMessageDialog(null,mensagem);
+    }
+
+    public JPasswordField getTextSenha() {
+        return TextSenha;
+    }
+
+    public void setTextSenha(JPasswordField TextSenha) {
+        this.TextSenha = TextSenha;
+    }
+
+    public JTextField getTextUsuario() {
+        return TextUsuario;
+    }
+
+    public void setTextUsuario(JTextField TextUsuario) {
+        this.TextUsuario = TextUsuario;
+    }
+    
+    
 }

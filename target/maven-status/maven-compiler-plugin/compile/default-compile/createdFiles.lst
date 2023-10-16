@@ -1,3 +1,4 @@
+view\Agenda$3.class
 view\Login$3.class
 view\Agenda$2.class
 view\Login$1.class
@@ -11,6 +12,8 @@ model\Pessoa.class
 view\Login.class
 model\Cliente.class
 view\Agenda$1.class
+view\Login$4.class
 view\Main.class
+Controller\LoginController.class
 view\Agenda.class
 view\MenuPrincipal$1.class

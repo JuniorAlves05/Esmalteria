@@ -65,7 +65,12 @@ public class Agenda extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPaneTabela, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 830, 260));
 
-        jButtonAgenda.setText("Agenda");
+        jButtonAgenda.setText("Agendar");
+        jButtonAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAgendaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 230, -1));
 
         jTextArea1.setColumns(20);
@@ -136,6 +141,10 @@ public class Agenda extends javax.swing.JFrame {
     private void jComboServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboServicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboServicoActionPerformed
+
+    private void jButtonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAgendaActionPerformed
 
     /**
      * @param args the command line arguments
