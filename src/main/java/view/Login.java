@@ -8,6 +8,7 @@ import Controller.LoginController;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import model.DAO.Banco;
 
 /**
  *
@@ -102,7 +103,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
     // Executa quando clico no botao
-        this.controller.fizTarefa(); // Metodo de mensagem personalizada
+        this.controller.entrarNoSistema(); // Metodo para entrar no sistema
        
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
@@ -137,6 +138,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
+                Banco.inicia();
             }
         });
     }

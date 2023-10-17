@@ -4,17 +4,22 @@
  */
 package view;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author Dell
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -31,8 +36,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuCadastro = new javax.swing.JMenu();
         jMenuCliente = new javax.swing.JMenuItem();
         jMenuServico = new javax.swing.JMenuItem();
-        jMenuRelatorio = new javax.swing.JMenuItem();
         jMenuOperacao = new javax.swing.JMenu();
+        jMenuAgenda = new javax.swing.JMenuItem();
+        jMenuRelatorio = new javax.swing.JMenu();
+        jMenuAgenda1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,16 +63,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuServico.setText("Serviço");
         jMenuCadastro.add(jMenuServico);
 
-        jMenuRelatorio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Pictures\\Sistema Esmalteria\\Icons\\relatorioTrabalho32-icon.png")); // NOI18N
-        jMenuRelatorio.setText("Relatorio");
-        jMenuCadastro.add(jMenuRelatorio);
-
         jMenuBar1.add(jMenuCadastro);
 
         jMenuOperacao.setText("Operação");
         jMenuOperacao.setToolTipText("");
         jMenuOperacao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        jMenuAgenda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Pictures\\Sistema Esmalteria\\Icons\\relatorioTrabalho32-icon.png")); // NOI18N
+        jMenuAgenda.setText("Agenda");
+        jMenuAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAgendaActionPerformed(evt);
+            }
+        });
+        jMenuOperacao.add(jMenuAgenda);
+
         jMenuBar1.add(jMenuOperacao);
+
+        jMenuRelatorio.setText("Relatorio");
+        jMenuRelatorio.setToolTipText("");
+        jMenuRelatorio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        jMenuAgenda1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Pictures\\Sistema Esmalteria\\Icons\\relatorioTrabalho32-icon.png")); // NOI18N
+        jMenuAgenda1.setText("Agenda");
+        jMenuRelatorio.add(jMenuAgenda1);
+
+        jMenuBar1.add(jMenuRelatorio);
 
         setJMenuBar(jMenuBar1);
 
@@ -88,6 +111,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuClienteActionPerformed
+
+    private void jMenuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendaActionPerformed
+        this.controller.navegarParaAgenda();
+    }//GEN-LAST:event_jMenuAgendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,11 +153,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelFundoPrincipal;
+    private javax.swing.JMenuItem jMenuAgenda;
+    private javax.swing.JMenuItem jMenuAgenda1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenuItem jMenuCliente;
     private javax.swing.JMenu jMenuOperacao;
-    private javax.swing.JMenuItem jMenuRelatorio;
+    private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenuItem jMenuServico;
     // End of variables declaration//GEN-END:variables
 }
